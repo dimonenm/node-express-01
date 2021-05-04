@@ -18,5 +18,5 @@ app.get('/api/db/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.log('ok');
+    console.log(`Server has been started on ${PORT} port`);
 });
