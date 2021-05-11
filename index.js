@@ -11,6 +11,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/api/db/', (req, res) => {
+
+    console.log('r');
+
     res.append('Content-Type', 'application/json')
     res.append('Access-Control-Allow-Origin', 'http://localhost:3000')
     res.append('Access-Control-Allow-Methods', 'GET')
