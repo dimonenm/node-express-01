@@ -10,14 +10,20 @@ app.get('/', (req, res) => {
     res.send(`<h1>Server has been started on ${PORT} port</h1>`);
 })
 
-app.get('/api/db/', (req, res) => {
-
-    console.log('r');
+app.get('/api/db/', (req, res) => {    
 
     res.append('Content-Type', 'application/json')
     res.append('Access-Control-Allow-Origin', 'http://localhost:3000')
     res.append('Access-Control-Allow-Methods', 'GET')
     res.sendFile(path.resolve(__dirname, 'static', 'db', 'db.json'));
+})
+
+app.post('/api/db/', (req, res) => {
+    console.log('test');
+    console.log('req.body: ', req.body);
+    res.append('Access-Control-Allow-Origin', 'http://localhost:3000')
+    res.append('Access-Control-Allow-Methods', 'POST')
+    res.send('POST request to the homepage');
 })
 
 app.listen(PORT, () => {
